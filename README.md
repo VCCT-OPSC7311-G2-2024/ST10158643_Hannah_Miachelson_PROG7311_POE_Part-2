@@ -44,8 +44,8 @@ To use the application, follow these steps:
 ### For Farmers:
 1. Add Product:
    * Navigate to the "Add Product" section.
-   * Enter product details such as name, category, and production date.
-   * Save the product to your profile.
+   * Enter product details such as name, category, product description and production date.
+   * Click "Create" to save the product to your profile.
 2. View Products:
    * Navigate to the "My Products" section.
    * View the list of products you have added.
@@ -64,16 +64,22 @@ To use the application, follow these steps:
 
 ### For Employees:
 1. Add New Farmer:
-   * Navigate to the "Add Farmer" section.
+   * Navigate to the "Add Account" section.
    * Enter essential details for the new farmer profile.
+   * Select farmer as role.
    * Save the new farmer profile.
-2. View and Filter Products:
+2. Add New Employee:
+   * Navigate to the "Add Account" section.
+   * Enter essential details for the new farmer profile.
+   * Select employee as role.
+   * Save the new employee profile.
+3. View and Filter Products:
    * Navigate to the "View Products" section.
    * View a comprehensive list of products from all farmers.
    * Use filters to search for products based on criteria such as date range and product category type.
-3. Manage Farmer Profiles:
+4. Manage Farmer Profiles:
    * Navigate to the "Manage Farmers" section.
-   * Edit or delete existing farmer profiles as needed.
+   * Sell list of farmers and select farmer to view profile.
 
 ## Review From Feedback
 Feedback: Feedback from user experience (UX) testing by classmates and peers highlighted several issues. The application's design was considered too plain and visually unappealing. Users also struggled with navigation due to unclear and unintuitive options. Additionally, the system allowed multiple accounts to be registered with the same email address, leading to confusion and potential security concerns.
