@@ -1,0 +1,290 @@
+﻿<!doctype html>
+<html lang="en" data-bs-theme="auto">
+<head>
+    <script src="/docs/5.3/assets/js/color-modes.js"></script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.122.0">
+    <title>Carousel Template · Bootstrap v5.3</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/carousel/">
+
+    <link href="/docs/5.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" href="/docs/5.3/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
+    <link rel="icon" href="/docs/5.3/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
+    <link rel="icon" href="/docs/5.3/assets/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
+    <link rel="manifest" href="/docs/5.3/assets/img/favicons/manifest.json">
+    <link rel="mask-icon" href="/docs/5.3/assets/img/favicons/safari-pinned-tab.svg" color="#712cf9">
+    <link rel="icon" href="/docs/5.3/assets/img/favicons/favicon.ico">
+    <meta name="theme-color" content="#712cf9">
+
+    <style>
+        .btn-primary {
+            background-color: #4CAF50;
+            border-color: #4CAF50;
+        }
+
+        .btn-outline-secondary {
+            border-color: #9FC98D;
+            color: #9FC98D;
+        }
+
+            .btn-outline-secondary:hover {
+                background-color: #4CAF50;
+                border-color: #4CAF50;
+                color: white;
+            }
+
+        .btn-primary:hover,
+        .btn-primary:focus,
+        .btn-primary:active,
+        .btn-primary.active,
+        .open > .dropdown-toggle.btn-primary {
+            background-color: #45A049;
+            border-color: #45A049;
+            color: white;
+        }
+
+        .carousel-item {
+            width: 100vw;
+            height: 500px;
+            background: #777;
+            position: relative;
+            background-position: center;
+        }
+
+            .carousel-item img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+
+        .overlay-image {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            top: 0;
+        }
+
+        .badge-sm {
+            font-size: 0.50em;
+            padding: 0.25em 0.5em;
+            background-color: #9fc98d;
+            color: white;
+            border-color: #9fc98d;
+        }
+
+        .badge-custom {
+            background-color: #9fc98d;
+            color: white;
+            border-color: #9fc98d;
+        }
+
+        .container.marketing {
+            margin-top: 50px;
+        }
+    </style>
+
+    <!-- Custom styles for this template -->
+    <link href="carousel.css" rel="stylesheet">
+</head>
+<body>
+    <main>
+        <div class="container-fluid" style="margin-left:-100px;  margin-top:-20px ;  width: 101vw;">
+            <div id="myCarousel" class="carousel slide mb-6" data-bs-ride="carousel">
+                <!-- Carousel Indicators -->
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                </div>
+                <!-- Carousel Indicators -->
+                <div class="carousel-inner">
+                    <!-- Slide 1 -->
+                    <div class="carousel-item active c-item">
+                        <img src="~/style_extra/s2.jpg" class="d-block w-100 c-img" alt="Slide 1">
+                        <div class="container">
+                            <div class="carousel-caption text-start">
+                                <h1>Sustainable Farming Hub</h1>
+                                <p class="opacity-75">
+                                    A resource centre for sharing best practices in sustainable farming, including organic
+                                    farming techniques, water conservation methods, and soil health maintenance.
+                                </p>
+                                <p><a class="btn btn-lg btn-primary" asp-controller="Account" asp-action="Hub">Visit Hub</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Slide 2 -->
+                    <div class="carousel-item c-item">
+                        <img src="~/style_extra/market.jpg" class="d-block w-100 c-img" alt="Slide 2">   <div class="container">
+                            <div class="carousel-caption">
+                                <h1>Green Energy Marketplace</h1>
+                                <p>
+                                    A marketplace for green energy solutions tailored to agricultural needs, such as solar powered
+                                    irrigation systems, wind turbines for farms, and biogas energy solutions.
+                                </p>
+                                <p><a class="btn btn-lg btn-primary" asp-controller="Product" asp-action="Create">Add New Product </a>
+                                <a class="btn btn-lg btn-primary" asp-controller="Account" asp-action="Market">View Market </a></>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Slide 3 -->
+                    <div class="carousel-item c-item">
+                        <img src="~/style_extra/edu.jpg" class="d-block w-100 c-img" alt="Slide 3"> <div class="container">
+                            <div class="carousel-caption text-end">
+                                <h1>Educational and Training Resources</h1>
+                                <p>
+                                    Online courses, webinars, and workshops on integrating green energy technologies in
+                                    agriculture.
+                                </p>
+                                <p><a class="btn btn-lg btn-primary" asp-area="" asp-controller="Account" asp-action="Education">Browse Resources</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Slide 4 -->
+                    <div class="carousel-item c-item">
+                        <img src="~/style_extra/collab.jpg" class="d-block w-100 c-img" alt="Slide 4">  <div class="container">
+                            <div class="carousel-caption text-end">
+                                <h1>Project Collaboration and Funding Opportunities</h1>
+                                <p>A platform for farmers and energy experts to propose and collaborate on joint projects.</p>
+                                <p><a class="btn btn-lg btn-primary" asp-controller="Account" asp-action="Projects">Explore Projects</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Next Buttons -->
+                <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+        <!--Manage User Products Section -->
+        <div class="row align-items-md-stretch">
+            <div class="col-md-12 p-4">
+                <div class="h-100 p-5  rounded-3" style="background-color: rgba(159, 201, 141, 0.7); color: white;">
+                    <h1 class="pb-2">Manage Your Products</h1>
+                    <p>view and create new product here.</p>
+                    <a class="btn btn-outline-light" type="button" asp-area="" asp-controller="Product" asp-action="Index">Mange Products</a>
+                </div>
+            </div>
+        </div>
+        <hr class="featurette-divider">
+        <!-- User Features  -->
+        <div class="container marketing">
+            <div class="row text-center">
+                <div class="col-lg-4">
+                    <img class="bd-placeholder-img rounded-circle" src="style_extra/5.png" width="140" height="140" alt="Green Energy Marketplace">
+                    <h2 class="fw-normal">Green Energy Marketplace</h2>
+                    <p>
+                        A marketplace for green energy solutions tailored to agricultural needs, such as solarpowered
+                        irrigation systems, wind turbines for farms, and biogas energy solutions.
+                    </p>
+                    <p><a class="btn btn-outline-secondary" type="button" asp-area="" asp-controller="Account" asp-action="Market">View Market</a></p>
+                </div><!-- /.col-lg-4 -->
+                <div class="col-lg-4">
+                    <img class="bd-placeholder-img rounded-circle" src="style_extra/6.png" width="140" height="140" alt="Educational and Training Resources">
+                    <h2 class="fw-normal">Educational and Training Resources</h2>
+                    <p>
+                        Online courses, webinars, and workshops on integrating green energy technologies in
+                        agriculture.
+                    </p>
+                    <p><a class="btn btn-outline-secondary" type="button" asp-area="" asp-controller="Account" asp-action="Education">View Resources</a></p>
+                </div><!-- /.col-lg-4 -->
+                <div class="col-lg-4">
+                    <img class="bd-placeholder-img rounded-circle" src="style_extra/4.png" width="140" height="140">
+                    <h2 class="fw-normal">Sustainable Farming Hub</h2>
+                    <p>
+                        A resource centre for sharing best practices in sustainable farming, including organic
+                        farming techniques, water conservation methods, and soil health maintenance.
+                    </p>
+                    <p><a class="btn btn-outline-secondary" type="button" asp-area="" asp-controller="Account" asp-action="Hub">View Projects</a></p>
+                </div><!-- /.col-lg-4 -->
+
+            </div><!-- /.row -->
+        </div>
+
+
+        <!--Projects and Collabs Preview Section -->
+
+        <hr>
+        <div class="row align-items-md-stretch" style="margin-bottom:60px">
+            <div class="col-md-12 p-4">
+                <div class="h-100 p-5  rounded-3" style="background-color: rgba(159, 201, 141, 0.7); color: white;">
+                    <h1 class="pb-2">New Project Collaboration and Funding Opportunities</h1>
+                    <p>view and create new product here.</p>
+                    <a class="btn btn-outline-light" type="button" asp-area="" asp-controller="Account" asp-action="Projects">Explore Projects</a>
+                </div>
+            </div>
+        </div>
+        <!--Projects and Collabs 1.-->
+        <div class="row featurette">
+            <div class="col-md-7">
+                <h2 class="featurette-heading fw-normal lh-1 bg-custom">
+                    Solar-Powered Irrigation Systems for Sustainable Farming.
+                    <span class="badge badge-sm rounded-pill badge-custom">
+                        Project Proposal
+                    </span>
+                </h2>
+                <p class="lead">We are proposing a collaborative project between farmers and energy experts to implement solar-powered irrigation systems in rural agricultural areas. These systems will enable farmers to access reliable water sources for their crops while reducing dependency on fossil fuels and grid electricity.</p>
+            </div>
+            <div class="col-md-5">
+                <img class="d-block w-100 c-img" src="~/style_extra/proj4.jpg" width="550" height="500">
+            </div>
+        </div>
+
+        <hr class="featurette-divider">
+        <!--Projects and Collabs 2.-->
+        <div class="row featurette">
+            <div class="col-md-7 order-md-2">
+                <h2 class="featurette-heading fw-normal lh-1  bg-custom">
+                    Government Grants for Agroforestry Initiatives.
+                    <span class="badge badge-sm rounded-pill badge-custom">
+                        Funding Opportunity
+                    </span>
+                </h2>
+                <p class="lead">Are you a farmer interested in integrating trees into your agricultural landscape to enhance biodiversity, soil health, and crop resilience? Look no further! Various government agencies are offering grants and subsidies specifically tailored to support agroforestry initiatives.</p>
+            </div>
+            <div class="col-md-5">
+                <img class="d-block w-100 c-img" src="~/style_extra/proj2.jpg" width="500" height="500">
+            </div>
+        </div>
+
+        <hr class="featurette-divider">
+        <!--Projects and Collabs 3.-->
+        <div class="row featurette">
+            <div class="col-md-7">
+                <h2 class="featurette-heading fw-normal lh-1  bg-custom">
+                    Biogas Digester Implementation for Livestock Farms.
+                    <span class="badge badge-sm rounded-pill badge-custom">
+                        Collaborative Project
+                    </span>
+                </h2>
+                <p class="lead">Calling all livestock farmers and biogas experts! Let's team up to implement biogas digesters on farms to convert animal waste into renewable energy and organic fertilizer. This collaborative effort will not only reduce greenhouse gas emissions but also provide a sustainable source of energy for farm operations.</p>
+            </div>
+            <div class="col-md-5">
+                <img class="d-block w-100 c-img" src="~/style_extra/proj3.jpg" width="500" height="500">
+            </div>
+        </div>
+
+        <hr class="featurette-divider">
+
+        <!-- /END THE FEATURETTES -->
+        </div><!-- /.container -->
+
+    </main>
+</body>
+</html>
+<!--__---____---____---____---____---____---____---__.ooo END OF FILE ooo.__---____---____---____---____---____---____---__-->

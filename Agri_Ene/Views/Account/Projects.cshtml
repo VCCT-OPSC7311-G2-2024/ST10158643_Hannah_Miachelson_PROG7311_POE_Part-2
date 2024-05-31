@@ -1,0 +1,70 @@
+﻿@model IEnumerable<Product>
+@{
+    var farmer = ViewData["Farmer"] as AgriUser;
+    var cat = ViewData["Farmer"] as AgriUser;
+    var categories = ViewBag.Categories as List<Agri_Ene.Data.ProductCategories>;
+}
+<!-- Define CSS styles -->
+<style>
+    .btn-primary {
+        background-color: #4CAF50;
+        border-color: #4CAF50;
+    }
+
+    .btn-outline-secondary {
+        border-color: #9FC98D;
+        color: #9FC98D;
+    }
+
+        .btn-outline-secondary:hover {
+            background-color: #4CAF50;
+            border-color: #4CAF50;
+            color: white;
+        }
+
+    .btn-primary:hover,
+    .btn-primary:focus,
+    .btn-primary:active,
+    .btn-primary.active,
+    .open > .dropdown-toggle.btn-primary {
+        background-color: #45A049;
+        border-color: #45A049;
+        color: white;
+    }
+
+</style>
+
+
+<div class="banner-image d-flex align-items-center justify-content-center text-center" style="background-image: url('/style_extra/e1.jpg'); width: 100vw; height: 250px; background-size: cover; background-position: center; margin-left:-100px ; margin-top:-16px; ">
+    <div class="text-container" style="text-align: center;">
+        <h2 class="display-5 link-body-emphasis" style="color: white;">Project Collaboration and Funding Opportunities</h2>
+        <p class="lead my-3 text-white">
+            Welcome to Project Collaboration and Funding Opportunities! Our platform connects farmers and energy experts, fostering collaboration on joint projects. Discover grants, subsidies, and funding tailored for green initiatives in agriculture. Join us in building a sustainable future for farming.
+        </p>
+        <a class="btn btn-outline-light" type="button" asp-area="" asp-controller="Account" asp-action="Projects">Apply for Funding</a>
+    </div>
+</div>
+<div class="row align-items-md-stretch" style="margin-top:50px">
+    <div class="col-md-4 pb-2">
+        <div class="h-100 p-5  text-bg-dark rounded-3" style="background-color: rgba(159, 201, 141, 0.9); color: white;">
+            <h2 class="display-6 fw-bold">Project Proposals</h2>
+            <p class=" px-1">This section showcases detailed proposals aiming to improve sustainability in agriculture through cutting-edge technologies and eco-friendly practices. Whether you're looking to initiate a project or find inspiration, this is your go-to hub for groundbreaking concepts and collaborative opportunities. Led by industry experts, these sessions offer practical skills for a sustainable future.</p>
+            <button class="btn btn-outline-light" type="button">Explore Project Proposals</button>
+        </div>
+    </div>
+    <div class="col-md-4 pb-2">
+        <div class="h-100 p-5 bg-body-tertiary border rounded-3" style="background-color: rgba(159, 201, 141, 0.6); color: white;">
+            <h2 class="display-6 fw-bold">Funding Opportunites</h2>
+            <p class=" px-1">This section provides up-to-date information on various funding sources, helping you secure the necessary resources to bring your sustainable projects to life. Stay informed about the latest financial opportunities to fuel your eco-friendly endeavors.</p>
+            <button class="btn btn-outline-light" type="button">Explore Funding</button>
+        </div>
+    </div>
+    <div class="col-md-4 pb-2">
+        <div class="h-100 p-5 bg-body-tertiary border rounded-3" style="background-color: rgba(159, 201, 141, 0.4); color: white;">
+            <h2 class="display-6 fw-bold">Collaborative Projects</h2>
+            <p class=" px-1"> Here, you can learn from successful collaborations, discover best practices, and find potential partners for your next project. This section is dedicated to showcasing the power of teamwork in driving sustainable advancements in agriculture.</p>
+            <button class="btn btn-outline-light" type="button">Explore Collab Projects</button>
+        </div>
+    </div>
+</div>
+

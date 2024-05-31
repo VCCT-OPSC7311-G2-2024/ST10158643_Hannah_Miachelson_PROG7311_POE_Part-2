@@ -1,0 +1,196 @@
+﻿@model Agri_Ene.Models.AgriUser
+@{
+    ViewData["Title"] = "User Details";
+}
+
+<!doctype html>
+<html lang="en" data-bs-theme="auto">
+  <head><script src="/docs/5.3/assets/js/color-modes.js"></script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.122.0">
+    <title>Carousel Template · Bootstrap v5.3</title>
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/carousel/">
+
+    
+
+   
+
+<link href="/docs/5.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+<!-- Favicons -->
+<link rel="apple-touch-icon" href="/docs/5.3/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
+<link rel="icon" href="/docs/5.3/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="/docs/5.3/assets/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
+<link rel="manifest" href="/docs/5.3/assets/img/favicons/manifest.json">
+<link rel="mask-icon" href="/docs/5.3/assets/img/favicons/safari-pinned-tab.svg" color="#712cf9">
+<link rel="icon" href="/docs/5.3/assets/img/favicons/favicon.ico">
+<meta name="theme-color" content="#712cf9">
+<!-- Define CSS styles -->
+    <style>
+        .btn-primary {
+            background-color: #4CAF50;
+            border-color: #4CAF50;
+        }
+
+        .btn-outline-primary {
+            background-color: #9FC98D;
+            border-color: #4CAF50;
+            color: white;
+        }
+
+            .btn-outline-primary:hover {
+                background-color: #4CAF50;
+                border-color: #4CAF50;
+                color: white;
+            }
+
+        .btn-outline-secondary {
+            border-color: #9FC98D;
+            color: #9FC98D;
+        }
+
+            .btn-outline-secondary:hover {
+                background-color: #4CAF50;
+                border-color: #4CAF50;
+                color: white;
+            }
+
+        .btn-primary:hover,
+        .btn-primary:focus,
+        .btn-primary:active,
+        .btn-primary.active,
+        .open > .dropdown-toggle.btn-primary {
+            background-color: #45A049;
+            border-color: #45A049;
+            color: white;
+        }
+
+        .forum-img {
+            width: 100px;
+            height: 96px;
+            object-fit: cover;
+        }
+
+        .forum-text {
+            color: black;
+        }
+ 
+        .carousel-item {
+            height: 200px;
+            background: #777;
+            position: relative;
+            background-position: left;
+        }
+
+        .carousel-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .overlay-image {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            top: 0;
+        }
+
+        .badge-sm {
+            font-size: 0.50em; 
+            padding: 0.25em 0.5em; 
+            background-color: #9fc98d;
+            color: white;
+            border-color: #9fc98d;
+        }
+
+        .badge-custom {
+            background-color: #9fc98d;
+            color: white;
+            border-color: #9fc98d;
+        }
+
+        .container.marketing {
+            margin-top: 50px; 
+        }
+    
+        /* Custom style for banner image */
+        .banner-image {
+            width: 92vw;
+            height: 150px; 
+            background-size: 100% 100%; 
+            background-position: 0px 0px;
+            position: relative;
+        }
+    </style>
+    
+    <!-- Custom styles for this template -->
+    <link href="carousel.css" rel="stylesheet">
+  </head>
+
+
+<!-- Header -->
+    <body>
+   
+    <div class="container-fluid px-0" style="margin-left: -100px; margin-top:-20px ; padding: 0;">
+        <!-- Banner Image -->
+        <div class="banner-image d-flex align-items-center justify-content-center text-center" style="background-image: url('style_extra/e1.jpg'); width: 100vw; height: 250px; background-size: cover; background-position: center; margin: 0; padding: 0;">
+            <div class="text-container" style="text-align: center;">
+                <h1 class="fw-light" style="color: white; ">Welcome Employee</h1>
+             
+            </div>
+        </div>
+    </div>
+
+    <br />
+
+        <div class="card col-md-12 h-100 p-2 rounded-3" style="background-color: rgba(159, 201, 141, 0.7); color: white; margin-bottom:70px">
+            <div class="card-header">
+                <!-- Employee Profile -->
+                <h2 class="display-6">Employee Profile</h2>
+            </div>
+            <div class="card-body">
+                <h5 class="card-title h-100 p-1"/>
+                    <p class="card-text"><strong>Email:</strong> @Model.Email</p>
+                    <p class="card-text"><strong>Phone:</strong> @Model.PhoneNumber</p>           
+            </div>
+        </div>
+        <main>
+
+            <hr class="featurette-divider">
+
+        <!--  Emploee Features -->
+            <div class="container marketing" style="margin-bottom:70px">
+              
+                <div class="row text-center">
+                    <div class="col-lg-4">
+                        <img class="bd-placeholder-img rounded-circle" src="style_extra/e9.png" width="140" height="140" alt="Green Energy Marketplace">
+                        <h2 class="fw-normal">Create New Account</h2>
+                        <p>Some representative placeholder content for the three columns of text below the carousel. This is the first column.</p>
+                        <p><a class="btn btn-outline-secondary" type="button" asp-area="Identity" asp-page="/Account/Register">Create</a></p>
+                    
+                    </div><!-- /.col-lg-4 -->
+                    <div class="col-lg-4">
+                        <img class="bd-placeholder-img rounded-circle" src="style_extra/e10.png" width="140" height="140" alt="Educational and Training Resources">
+                        <h2 class="fw-normal">Marketplace Listings</h2>
+                        <p>Another exciting bit of representative placeholder content. This time, we've moved on to the second column.</p>
+                    <p><a class="btn btn-outline-secondary" type="button" asp-area="" asp-controller="Employee" asp-action="EmpFilterList">View Listings</a></p>
+                    </div><!-- /.col-lg-4 -->
+                    <div class="col-lg-4">
+                        <img class="bd-placeholder-img rounded-circle" src="style_extra/e8.png" width="140" height="140">
+                        <h2 class="fw-normal">Manage Farmers</h2>
+                        <p>And lastly this, the third column of representative placeholder content.</p>
+                    <p><a class="btn btn-outline-secondary" type="button" asp-area="" asp-controller="Employee" asp-action="Farmers">Manage Farmers</a></p>
+                    </div><!-- /.col-lg-4 -->              
+                </div><!-- /.row -->
+            </div>
+
+
+        </main>
+    </body>
+</html>
+<!--__---____---____---____---____---____---____---__.ooo END OF FILE ooo.__---____---____---____---____---____---____---__-->

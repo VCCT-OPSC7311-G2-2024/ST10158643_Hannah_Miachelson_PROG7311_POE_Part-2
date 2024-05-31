@@ -1,0 +1,29 @@
+﻿@model Product
+<div class="container">
+
+    <!-- Portfolio Product Name -->
+    <h1 class="my-4">
+        @Model.prodName
+    </h1>
+  
+
+    <!-- Portfolio Item Row -->
+    <div class="row">
+        <div class="col-md-8 rounded border pb-3 pe-5" style="background-color: rgba(0, 128, 0, 0.3);">
+            <img class="img-fluid" src="https://via.placeholder.com/750x500" alt="">
+        </div>  
+        <div class="col-md-4 rounded border p-3" style="background-color: rgba(0, 128, 0, 0.3);"/>           
+            <h3 class="my-3">Project Description</h3>
+             <p> @Model.prodDescription</p>
+            <h3 class="my-3">Project Details</h3>
+            <ul>
+                <li>Category: @Model.prodCategory</li>
+                <li>Date of Production: @Model.productionDate</li>
+            <li>Category: @Model.prodCategory</li>
+            <li>Seller: @ViewData["SellerFirstName"] @ViewData["SellerLastName"]</li>
+            </ul>
+        </div>     
+    </div>
+
+</div>
+<!--__---____---____---____---____---____---____---__.ooo END OF FILE ooo.__---____---____---____---____---____---____---__-->

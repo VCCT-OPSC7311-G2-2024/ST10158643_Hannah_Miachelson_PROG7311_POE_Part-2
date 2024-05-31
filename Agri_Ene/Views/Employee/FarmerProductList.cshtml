@@ -1,0 +1,39 @@
+﻿@model IEnumerable<Agri_Ene.ViewModel.EmployeeVM>
+
+@{
+    var productVMs = ViewBag.ProductVMs as IEnumerable<Agri_Ene.ViewModel.EmployeeVM>;
+}
+
+
+@if (productVMs != null)
+{
+    <table class="table">
+        <thead>
+            <tr>             
+                <th>Product Name</th>
+                <th>Category</th>
+                <th>Production Date</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var product in productVMs)
+            {
+                <tr>                  
+                    <td>@product.product.prodName</td>
+                    <td>@product.productCategory</td>
+                    <td>@(product.product.productionDate?.ToString("yyyy-MM-dd") ?? "N/A")</td>
+                    <td style="white-space:nowrap">
+                        <a class="btn btn-outline-primary" type="button" herf="#">
+                           Manage Product
+                        </a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>No products found.</p>
+}

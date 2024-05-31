@@ -1,0 +1,47 @@
+﻿@model IEnumerable<Agri_Ene.ViewModel.EmployeeVM>
+
+@{
+    // Retrieve product view models from ViewBag
+    var productVMs = ViewBag.ProductVMs as IEnumerable<Agri_Ene.ViewModel.EmployeeVM>;
+}
+
+@if (productVMs != null)
+{
+    <!-- Product Table -->
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Product Name</th>
+                <th>Category</th>
+                <th>Production Date</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var product in productVMs)
+            {
+                <!-- Product Row -->
+                <tr>
+                    <!-- Product Name -->
+                    <td class="bold-text">@product.product.prodName</td>
+                    <!-- Product Category -->
+                    <td class="bold-text">@product.productCategory</td>
+                    <!-- Production Date -->
+                    <td class="bold-text">@(product.product.productionDate?.ToString("yyyy-MM-dd") ?? "N/A")</td>
+                    <!-- Action Button -->
+                    <td style="white-space:nowrap">
+                        <a class="btn btn-primary btn-sm" href="#">
+                            Manage
+                        </a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <!-- No Products Found Message -->
+    <p>No products found.</p>
+}
+<!--__---____---____---____---____---____---____---__.ooo END OF FILE ooo.__---____---____---____---____---____---____---__-->

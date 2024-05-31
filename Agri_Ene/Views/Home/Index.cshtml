@@ -1,0 +1,128 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using Agri_Ene.Models
+
+@inject SignInManager<AgriUser> SignInManager
+@inject UserManager<AgriUser> UserManager
+
+<style>
+    .btn-primary {
+        background-color: #4CAF50;
+        border-color: #4CAF50;
+    }
+
+    .btn-outline-primary {
+        background-color: #9FC98D;
+        border-color: #4CAF50;
+        color: white;
+    }
+
+        .btn-outline-primary:hover {
+            background-color: #4CAF50;
+            border-color: #4CAF50;
+            color: white;
+        }
+
+    .btn-outline-secondary {
+        border-color: #9FC98D;
+        color: #9FC98D;
+    }
+
+        .btn-outline-secondary:hover {
+            background-color: #4CAF50;
+            border-color: #4CAF50;
+            color: white;
+        }
+
+    .btn-primary:hover,
+    .btn-primary:focus,
+    .btn-primary:active,
+    .btn-primary.active,
+    .open > .dropdown-toggle.btn-primary {
+        background-color: #45A049;
+        border-color: #45A049;
+        color: white;
+    }
+
+    .forum-img {
+        width: 100px;
+        height: 96px;
+        object-fit: cover;
+    }
+
+    .forum-text {
+        color: black;
+    }
+
+</style>
+<!--@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+
+
+<a href="/Account/Details">User Other</a>
+<br />
+
+<a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="Details">User</a>-->
+@if (SignInManager.IsSignedIn(User))
+{
+    <form id="roleCheckForm" method="post" action="/Home/GetUserRole"></form>
+    <script type="text/javascript">
+        window.onload = function () {
+            document.getElementById('roleCheckForm').submit();
+        };
+    </script>
+    /*var user = await UserManager.GetUserAsync(User);
+    var roles = await UserManager.GetRolesAsync(user);
+
+
+    <!-- Check User Role -->
+    @if (roles.Contains("farmer"))
+    {
+        <div class="text-center">
+            <h1 class="display-4">Welcome Farmer</h1>
+            <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+        </div>
+
+
+    }
+    // else if (User.IsInRole("employee"))
+    else if (roles.Contains("employee"))
+    {
+        <div class="text-center">
+            <h1 class="display-4">Welcome Employee</h1>
+            <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+        </div>
+
+
+    }*/
+
+}
+else
+{
+    ViewData["Title"] = "Home Page";
+<div class="text-center">
+    </div>
+
+
+    <div class="banner-image d-flex align-items-center justify-content-center text-center" style="background-image: url('/style_extra/e1.jpg'); width: 100vw; height: 500px; background-size: cover; background-position: center; margin-left: -100px; margin-top:-18px; margin-bottom:-20px;position: relative;">
+        <div class="overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5); z-index: 1;"></div>
+        <div class="text-container" style="text-align: center; position: relative; z-index: 2;">
+            <h2 class="display-5 link-body-emphasis" style="color: white;">Welcome to Agri-Energy Connect!</h2>
+            <p class="lead text-white" style="line-height: 1.5; margin-bottom: -10px;">We're thrilled to have you join our community dedicated to sustainable agriculture and green</p>
+            <p class="lead text-white" style="line-height: 1.5; padding-top: 10px;">energy innovation. Explore, collaborate, and innovate with us for a greener future in farming.</p>
+            <p>
+                <a class="btn btn-primary" type="button" id="login" asp-area="Identity" asp-page="/Account/Login">Login</a>
+                <a class="btn btn-outline-secondary" type="button" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy Policy</a>
+            </p>
+        </div>
+    </div>
+
+   
+
+
+}

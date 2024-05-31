@@ -1,0 +1,173 @@
+﻿@page
+@model RegisterModel
+
+<!-- CSS Styles -->
+<style>
+    /* Primary button styles */
+    .btn-primary {
+        background-color: #4CAF50;
+        border-color: #4CAF50;
+    }
+
+    /* Primary button with outline styles */
+    .btn-outline-primary {
+        background-color: #9FC98D;
+        border-color: #4CAF50;
+        color: white;
+    }
+
+        /* Hover effect for primary outline button */
+        .btn-outline-primary:hover {
+            background-color: #4CAF50;
+            border-color: #4CAF50;
+            color: white;
+        }
+
+    /* Secondary button with outline styles */
+    .btn-outline-secondary {
+        border-color: #9FC98D;
+        color: #9FC98D;
+    }
+
+        /* Hover effect for secondary outline button */
+        .btn-outline-secondary:hover {
+            background-color: #4CAF50;
+            border-color: #4CAF50;
+            color: white;
+        }
+
+    /* Additional styles for primary button on hover, focus, active, and dropdown */
+    .btn-primary:hover,
+    .btn-primary:focus,
+    .btn-primary:active,
+    .btn-primary.active,
+    .open > .dropdown-toggle.btn-primary {
+        background-color: #45A049;
+        border-color: #45A049;
+        color: white;
+    }
+
+    /* Styling for forum image */
+    .forum-img {
+        width: 100px;
+        height: 96px;
+        object-fit: cover;
+    }
+
+    /* Styling for forum text */
+    .forum-text {
+        color: black;
+    }
+
+    /* Styling for forum control */
+    .forum-control {
+        color: black;
+    }
+
+    /* Background container styles */
+    .background-container {
+        background-image: url('/style_extra/h5.jpg');
+        background-position: center;
+        position: relative;
+        padding: 20px;
+        margin-right: -89px;
+        margin-left: -90px;
+        margin-top: -18px;
+        margin-bottom: -20px;
+    }
+
+    /* Background tint styles */
+    .background-tint {
+        background-color: rgba(0, 0, 0, 0.5); /* Adjust the color and opacity for the tint */
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+    }
+
+    /* Content container styles */
+    .content-container {
+        position: relative;
+        z-index: 1;
+        color: white; /* Adjust text color for better readability */
+    }
+</style>
+
+<!-- HTML Content -->
+<div class="background-container">
+    <div class="background-tint"></div>
+    <div class="content-container">
+        <div class="row">
+            <div class="col-lg-6 mx-auto rounded border p-3" style="background-color: rgba(159, 201, 141, 0.7); margin-top: 20px">
+                <h2 class="text-center m-3">Register New Account</h2>
+                <hr />
+                <div asp-validation-summary="ModelOnly" class="text-danger" role="alert"></div>
+                <!-- Registration Form -->
+                <form id="registerForm" asp-route-returnUrl="@Model.ReturnUrl" method="post">
+                    <!-- Firstname Field -->
+                    <label style="color:white">Firstname</label>
+                    <div class="form-floating mb-3">
+                        <input asp-for="Input.FirstName" style="color:black" class="form-control" autocomplete="username" aria-required="true" placeholder="Joe" />
+                        <label for="Input_FirstName"></label>
+                        <span asp-validation-for="Input.FirstName" class="text-danger"></span>
+                    </div>
+                    <!-- Surname Field -->
+                    <label style="color:white">Surname</label>
+                    <div class="form-floating mb-3">
+                        <input asp-for="Input.LastName" style="color:black" class="form-control" autocomplete="username" aria-required="true" placeholder="Brown" />
+                        <label for="Input_LastName">e</label>
+                        <span asp-validation-for="Input.LastName" class="text-danger"></span>
+                    </div>
+                    <!-- Phone Number Field -->
+                    <label style="color:white">Phone Number</label>
+                    <div class="form-floating mb-3">
+                        <input asp-for="Input.PhoneNumber" style="color:black" class="form-control" autocomplete="username" aria-required="true" placeholder="0123456789" />
+                        <label for="Input_PhoneNumber"></label>
+                        <span asp-validation-for="Input.PhoneNumber" class="text-danger"></span>
+                    </div>
+                    <!-- Email Field -->
+                    <label style="color:white">Email</label>
+                    <div class="form-floating mb-3">
+                        <input asp-for="Input.Email" style="color:black" class="form-control" autocomplete="username" aria-required="true" placeholder="name@example.com" />
+                        <label for="Input_Email">Email</label>
+                        <span asp-validation-for="Input.Email" class="text-danger"></span>
+                    </div>
+                    <!-- Password Field -->
+                    <label style="color:white">Password</label>
+                    <div class="form-floating mb-3">
+                        <input asp-for="Input.Password" style="color:black" class="form-control" autocomplete="new-password" aria-required="true" placeholder="password" />
+                        <label for="Input_Password">Password</label>
+                        <span asp-validation-for="Input.Password" class="text-danger"></span>
+                    </div>
+                    <!-- Confirm Password Field -->
+                    <label style="color:white">Confirm Password</label>
+                    <div class="form-floating mb-3">
+                        <input asp-for="Input.ConfirmPassword" style="color:black" class="form-control" autocomplete="new-password" aria-required="true" placeholder="password" />
+                        <label for="Input_ConfirmPassword"></label>
+                        <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
+                    </div>
+                    <!-- Role Selection Dropdown -->
+                    <div class="form-group mb-3">
+                        <label for="Role">Select Role</label>
+                        <select asp-for="Input.Role" class="form-control" id="Role">
+                            <option value="farmer">Farmer</option>
+                            <option value="employee">Employee</option>
+                        </select>
+                    </div>
+                    <!-- Register and Cancel Buttons -->
+                    <div class="row mb-3 justify-content-center">
+                        <div class="col-sm-4 d-grid">
+                            <button type="submit" class="w-100 btn btn-lg btn-primary">Register</button>
+                        </div>
+                        <div class="col-sm-4 d-grid">
+                            <button type="submit" class="w-100 btn btn-lg btn-outline-primary">Cancel</button>
+                        </div>
+                    </div>
+                </form>
+                <br class="height=50px" />
+            </div>
+        </div>
+    </div>
+</div>

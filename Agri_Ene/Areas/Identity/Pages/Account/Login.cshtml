@@ -1,0 +1,149 @@
+﻿@page
+@model LoginModel
+
+<!-- Custom CSS -->
+<style>
+    /* Primary button styles */
+    .btn-primary {
+        background-color: #4CAF50;
+        border-color: #4CAF50;
+    }
+
+    /* Primary outline button styles */
+    .btn-outline-primary {
+        background-color: #9FC98D;
+        border-color: #4CAF50;
+        color: white;
+    }
+
+        /* Hover effect for primary outline button */
+        .btn-outline-primary:hover {
+            background-color: #4CAF50;
+            border-color: #4CAF50;
+            color: white;
+        }
+
+    /* Secondary outline button styles */
+    .btn-outline-secondary {
+        border-color: #9FC98D;
+        color: #9FC98D;
+    }
+
+        /* Hover effect for secondary outline button */
+        .btn-outline-secondary:hover {
+            background-color: #4CAF50;
+            border-color: #4CAF50;
+            color: white;
+        }
+
+    /* Additional styles for primary button on hover, focus, etc. */
+    .btn-primary:hover,
+    .btn-primary:focus,
+    .btn-primary:active,
+    .btn-primary.active,
+    .open > .dropdown-toggle.btn-primary {
+        background-color: #45A049;
+        border-color: #45A049;
+        color: white;
+    }
+
+    /* Image styles */
+    .forum-img {
+        width: 100px;
+        height: 96px;
+        object-fit: cover;
+    }
+
+    /* Text styles */
+    .forum-text {
+        color: black;
+    }
+
+    /* Label styles */
+    .forum-label {
+        color: black;
+    }
+
+    /* Background container styles */
+    .background-container {
+        background-image: url('/style_extra/h5.jpg');
+        background-position: center;
+        position: relative;
+        padding: 20px;
+        margin-right: -89px;
+        margin-left: -90px;
+        margin-top: -18px;
+        margin-bottom: -20px;
+    }
+
+    /* Background tint styles */
+    .background-tint {
+        background-color: rgba(0, 0, 0, 0.5); 
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+    }
+
+    /* Content container styles */
+    .content-container {
+        position: relative;
+        z-index: 1;
+        color: black; 
+    }
+</style>
+
+<!-- Background container with tint -->
+<div class="background-container">
+    <div class="background-tint"></div>
+    <div class="content-container">
+        <!-- Body -->
+        <body class="mb-lg-5">
+            <div class="row pb-lg-5">
+                <div class="col-lg-6 mx-auto rounded border p-3" style="background-color: rgba(159, 201, 141, 0.7); margin-top: 100px; margin-bottom: 100px;">
+                    <section>
+                        <!-- Login Form -->
+                        <form id="account" method="post">
+                            <h2 class="text-center mb-3">Agri-Energy Login</h2>
+                            <hr />
+                            <!-- Validation summary -->
+                            <div asp-validation-summary="ModelOnly" class="text-danger" role="alert"></div>
+                            <!-- Email input -->
+                            <div class="form-floating mb-3">
+                                <input asp-for="Input.Email" class="form-control">
+                                <label asp-for="Input.Email" class="form-label">Email</label>
+                                <span asp-validation-for="Input.Email" class="text-danger"></span>
+                            </div>
+                            <!-- Password input -->
+                            <div class="form-floating mb-3">
+                                <input asp-for="Input.Password" class="form-control" />
+                                <label asp-for="Input.Password" class="form-label">Password</label>
+                                <span asp-validation-for="Input.Password" class="text-danger"></span>
+                            </div>
+                            <!-- Remember me checkbox -->
+                            <div class="checkbox mb-3">
+                                <label asp-for="Input.RememberMe" class="form-label align-self-center">
+                                    <input class="form-check-input" asp-for="Input.RememberMe" />
+                                    @Html.DisplayNameFor(m => m.Input.RememberMe)
+                                </label>
+                            </div>
+                            <!-- Login and cancel buttons -->
+                            <div class="row mb-3 justify-content-center">
+                                <div class="col-sm-4 d-grid">
+                                    <button id="login-submit" type="submit" class="w-100 btn btn-lg btn-primary">Log in</button>
+                                </div>
+                                <div class="col-sm-4 d-grid">
+                                    <button id="login-submit" type="submit" class="w-100 btn btn-lg btn-outline-primary">Cancel</button>
+                                </div>
+                            </div>
+                        </form>
+                    </section>
+                    <br class="height=50px" />
+                </div>
+            </div>
+        </body>
+    </div>
+</div>
+<!--__---____---____---____---____---____---____---__.ooo END OF FILE ooo.__---____---____---____---____---____---____---__-->

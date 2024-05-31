@@ -1,0 +1,69 @@
+﻿@model IEnumerable<Agri_Ene.ViewModel.EmployeeVM>
+@{
+    var productVMs = ViewBag.ProductVMs as IEnumerable<Agri_Ene.ViewModel.EmployeeVM>;
+}
+
+@if (productVMs != null)
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Farmer</th>
+                <th>Product Name</th>
+                <th>Category</th>
+                <th>Production Date</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var product in productVMs)
+            {
+                <tr>
+                    <td>@product.firstName @product.lastName</td>
+                    <td>@product.product.prodName</td>
+                    <td>@product.productCategory</td>
+                    <td>@(product.product.productionDate?.ToString("yyyy-MM-dd") ?? "N/A")</td>
+                    <td style="white-space:nowrap">
+                        <a class="btn btn-outline-primary" type="button" asp-area="" asp-controller="Employee" asp-action="FarmerList" asp-route-farmerName="@product.firstName">
+                            View Farmer 
+                        </a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else if (Model.Any())
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Farmer</th>
+                <th>Product Name</th>
+                <th>Category</th>
+                <th>Production Date</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+           @*  @foreach (var product in Model)
+            {
+                <tr>
+                    <td>@product.Farmer?.FirstName</td>
+                    <td>@product.prodName</td>
+                    <td>@product.prodCategory</td>
+                    <td>@product.productionDate?.ToString("yyyy-MM-dd")</td>
+                    <td style="white-space:nowrap">
+                       <a class="btn btn-primary btn-sm" asp-controller="Product" asp-action="Details" asp-route-id="@product.prodId">
+                            View
+                        </a>
+                    </td>
+                </tr>
+            } *@
+        </tbody>
+    </table>
+}
+else
+{
+    <p>No products found.</p>
+}
